@@ -1,0 +1,16 @@
+@startuml
+class CharacterStatus {
+    +Hp : int
+    +MaxHp : int
+    +Attack : int
+    +AttackSpeed : float
+    +AttackRange
+    +Defence : int
+}
+
+abstract class Character {
+    #CharacterStatus : enum = {Idle, Attack, Dead}
+    +Status : CharacterStatus
+}
+
+@enduml
