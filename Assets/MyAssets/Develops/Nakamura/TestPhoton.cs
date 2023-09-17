@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
+using UnityEngine;
+
+public class TestPhoton : MonoBehaviourPunCallbacks
+{
+    [SerializeField] private PlayerData _playerData;
+    [SerializeField] private Vector2[] _spawnPosition = new Vector2[4];
+    // Start is called before the first frame update
+    void Start()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+    }
+
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinOrCreateRoom("Room", new Photon.Realtime.RoomOptions(), TypedLobby.Default);
+    }
+
+    public override void OnJoinedRoom()
+    {
+        for (int i = 0; i < _playerData.PartyCharacters.Length; i++)
+        {
+            if (_playerData.PartyCharacters[i] != null)
+            {
+                var obj = PhotonNetwork.Instantiate(_playerData.PartyCharacters[i].Prefab.name, _spawnPosition[i], Quaternion.identity);
+                obj.GetComponent<MoveEnemyCharacter>().Move();
+            }
+        }
+    }
+}
