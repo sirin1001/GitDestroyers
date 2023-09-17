@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5127721663677053318}
   - component: {fileID: 7433596361603661885}
   - component: {fileID: 7160893846924284331}
-  - component: {fileID: 945162224878776751}
   - component: {fileID: 4908183827668308051}
+  - component: {fileID: 945162224878776751}
   m_Layer: 6
   m_Name: NormalOctCat1
   m_TagString: Untagged
@@ -132,20 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!114 &945162224878776751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734491935830660791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac6040c4f792744f85fa7cf66ea1bf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: de928ca912bbcbe41adfefd0ef8be633, type: 2}
-  _collider: {fileID: 6512111732792115721}
 --- !u!50 &4908183827668308051
 Rigidbody2D:
   serializedVersion: 4
@@ -154,7 +140,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734491935830660791}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -173,6 +159,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &945162224878776751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734491935830660791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac6040c4f792744f85fa7cf66ea1bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: de928ca912bbcbe41adfefd0ef8be633, type: 2}
+  _collider: {fileID: 6512111732792115721}
+  _skillTime: 5
 --- !u!1 &1807144574412457547
 GameObject:
   m_ObjectHideFlags: 0

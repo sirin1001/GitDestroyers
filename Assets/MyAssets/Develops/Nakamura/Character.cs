@@ -17,15 +17,17 @@ public abstract class Character : MonoBehaviour
     public CharacterState State { get; protected set; }
     public int Hp { get; set; }
     //スキルで値を変えるかもしれない
-    public int _attack { get; protected set; }
+    public int _attack { get; set; }
     protected float _attackSpeed;
-    protected int _skillCount;
+    protected int _attackCount;
+    protected int _damageCount;
     protected float _timeCount;
     protected const float AttackTime = 0.5f;
     // Start is called before the first frame update
     protected void Start()
     {
-        _skillCount = 0;
+        _attackCount = 0;
+        _damageCount = 0;
         Hp = _data.MaxHp;
         _attack = _data.Attack;
         _attackSpeed = _data.AttackSpeed;
@@ -41,24 +43,41 @@ public abstract class Character : MonoBehaviour
             _timeCount = 0;
             StartCoroutine(Attack());
         }
+        if (_attackCount >= _data.SkillAttackCount)
+        {
+            _attackCount = 0;
+            Skill();
+        }
     }
     protected virtual IEnumerator Attack()
-    {
+    {;
         State = CharacterState.Attack;
         _collider.gameObject.SetActive(true);
         yield return new WaitForSeconds(AttackTime);
         State = CharacterState.Idle;
         _collider.gameObject.SetActive(false);
+
+        _attackCount++;
     }
     public virtual void Damage(int damage)
     {
         Hp -= damage;
+        _damageCount++;
         if (Hp <= 0)
         {
             State = CharacterState.Dead;
         }
+        if (_damageCount >= _data.SkillDamageCount)
+        {
+            _damageCount = 0;
+            Skill();
+        }
     }
     protected virtual void Skill()
+    {
+        
+    }
+    protected virtual void EndSkill()
     {
         
     }

@@ -8,6 +8,8 @@ public class CharacterData : ScriptableObject {
     public string CharacterName;
     public string SkillName;
     public string SkillDescription;
+    public int SkillAttackCount;
+    public int SkillDamageCount;
     public int MaxHp;
     public int Attack;
     public float AttackSpeed;

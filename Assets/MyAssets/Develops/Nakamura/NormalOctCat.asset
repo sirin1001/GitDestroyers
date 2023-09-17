@@ -16,6 +16,8 @@ MonoBehaviour:
   CharacterName: NormalOctCat
   SkillName: "\u304B\u305F\u3084\u3076\u308A"
   SkillDescription: 
+  SkillAttackCount: 10
+  SkillDamageCount: 1000000
   MaxHp: 100
   Attack: 2
   AttackSpeed: 1.5
