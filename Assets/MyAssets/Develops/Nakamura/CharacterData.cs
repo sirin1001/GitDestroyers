@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CharacterStatus", menuName = "ScriptableObject/CharacterStatus", order = 0)]
-public class CharacterStatus : ScriptableObject {
+[CreateAssetMenu(fileName = "CharacterData", menuName = "ScriptableObject/New CharacterData", order = 0)]
+public class CharacterData : ScriptableObject {
     public int CharacterID;
     public string CharacterName;
     public string SkillName;

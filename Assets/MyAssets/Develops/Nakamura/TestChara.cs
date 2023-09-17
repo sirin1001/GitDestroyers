@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestChara : MonoBehaviour
 {
-    public CharacterStatus status;
+    public CharacterData status;
     // Start is called before the first frame update
     void Start()
     {
