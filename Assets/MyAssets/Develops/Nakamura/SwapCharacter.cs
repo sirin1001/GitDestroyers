@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class SwapCharacter : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private TestPhoton _testPhoton;
-    private List<GameObject> FieldCharacters = new List<GameObject>();
-    public List<GameObject> CurrentParty = new List<GameObject>();
+    public Vector3[] _spawnPosition = new Vector3[4];
+    private List<GameObject> CurrentParty = new List<GameObject>();
     
     public void AddCurrentCharacters(GameObject obj)
     {
@@ -28,7 +27,7 @@ public class SwapCharacter : MonoBehaviourPunCallbacks
             {
                 CurrentParty.RemoveAt(i);
             }
-            CurrentParty[i].transform.position = _testPhoton._spawnPosition[i];
+            CurrentParty[i].transform.position = _spawnPosition[i];
         }
     }
 }
