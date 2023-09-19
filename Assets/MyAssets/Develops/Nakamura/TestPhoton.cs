@@ -7,7 +7,8 @@ using UnityEngine;
 public class TestPhoton : MonoBehaviourPunCallbacks
 {
     [SerializeField] private PlayerData _playerData;
-    [SerializeField] private Vector2[] _spawnPosition = new Vector2[4];
+    public Vector2[] _spawnPosition = new Vector2[4];
+    [SerializeField] private SwapCharacter _swapCharacter;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class TestPhoton : MonoBehaviourPunCallbacks
             if (_playerData.PartyCharacters[i] != null)
             {
                 var obj = PhotonNetwork.Instantiate(_playerData.PartyCharacters[i].Prefab.name, _spawnPosition[i], Quaternion.identity);
-                obj.GetComponent<MoveEnemyCharacter>().Move();
+                _swapCharacter.AddCurrentCharacters(obj);
             }
         }
     }

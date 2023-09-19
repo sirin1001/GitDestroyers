@@ -223,6 +223,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 113379545087520764, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 717973775820227763, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1462195115020453289, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: sceneViewId
       value: 1
@@ -292,6 +300,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 113379545087520764, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 717973775820227763, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1462195115020453289, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: sceneViewId
       value: 4
@@ -363,8 +379,9 @@ GameObject:
   m_Component:
   - component: {fileID: 320789494}
   - component: {fileID: 320789493}
+  - component: {fileID: 320789495}
   m_Layer: 0
-  m_Name: TestPhoton
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -388,6 +405,7 @@ MonoBehaviour:
   - {x: -5.45, y: 0.64}
   - {x: -6.59, y: -0.5}
   - {x: -7.73, y: -1.65}
+  _swapCharacter: {fileID: 320789495}
 --- !u!4 &320789494
 Transform:
   m_ObjectHideFlags: 0
@@ -403,6 +421,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &320789495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320789492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9639f6763ba2e4eb92e5711447a396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _testPhoton: {fileID: 320789493}
+  CurrentParty: []
 --- !u!1001 &838779599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -411,6 +443,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 113379545087520764, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 717973775820227763, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1462195115020453289, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: sceneViewId
       value: 3
@@ -480,6 +520,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 113379545087520764, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 717973775820227763, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1462195115020453289, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: sceneViewId
       value: 2

@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4762067744350625150}
   - component: {fileID: 1462195115020453289}
-  - component: {fileID: 8068956563120690562}
+  - component: {fileID: 6042715705501747724}
   m_Layer: 0
   m_Name: NormalOctCat
   m_TagString: Untagged
@@ -227,11 +227,12 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 6042715705501747724}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &8068956563120690562
+--- !u!114 &6042715705501747724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,8 +271,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7884963724554256884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.047, y: 0.023, z: -0.2997198}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalPosition: {x: 10.7945, y: 0.0461, z: -0.2997198}
+  m_LocalScale: {x: 19.49511, y: 0.5294804, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4762067744350625150}
