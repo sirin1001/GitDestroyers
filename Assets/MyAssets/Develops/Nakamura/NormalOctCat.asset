@@ -22,5 +22,5 @@ MonoBehaviour:
   Attack: 2
   AttackSpeed: 1.5
   AttackRange: 000000
-  Prefab: {fileID: 4341045404948416861, guid: 2682789436dff254d94ba01a041132ab, type: 3}
-  Icon: {fileID: 0}
+  Prefab: {fileID: 1484473859764959129, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+  Icon: {fileID: 21300000, guid: 107eb8b163fba504eaa27727770f2c26, type: 3}

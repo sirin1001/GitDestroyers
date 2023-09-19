@@ -12,7 +12,7 @@ public abstract class Character : MonoBehaviourPunCallbacks, IPunObservable
         Idle,
         Dead
     }
-    [SerializeField] protected CharacterData _data;
+    [field : SerializeField] public CharacterData _data { get; private set;}
     [SerializeField] protected Collider2D _collider;
     public CharacterState State { get; protected set; }
     public int Hp { get; set; }
