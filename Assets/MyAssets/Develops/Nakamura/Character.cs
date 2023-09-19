@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
+using DG.Tweening;
 
 [RequireComponent(typeof(Character))]
-public abstract class Character : MonoBehaviour
+public abstract class Character : MonoBehaviourPunCallbacks, IPunObservable
 {
     public enum CharacterState
     {
         Idle,
-        Attack,
         Dead
     }
     [SerializeField] protected CharacterData _data;
@@ -16,60 +17,47 @@ public abstract class Character : MonoBehaviour
     public CharacterState State { get; protected set; }
     public int Hp { get; set; }
     //スキルで値を変えるかもしれない
-    public int _attack { get; set; }
+    public int AttackPower { get; set; }
     protected float _attackSpeed;
-    protected int _attackCount;
-    protected int _damageCount;
     protected float _timeCount;
     protected const float AttackTime = 0.5f;
+    protected float _attackTime;
     // Start is called before the first frame update
-    protected void Start()
+    protected virtual void Start()
     {
-        _attackCount = 0;
-        _damageCount = 0;
-        Hp = _data.MaxHp;
-        _attack = _data.Attack;
+        State = CharacterState.Idle;
+        AttackPower = _data.Attack;
         _attackSpeed = _data.AttackSpeed;
+        Hp = _data.MaxHp;
+        _attackTime = AttackTime;
         _collider.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
-    protected virtual void Update()
+    protected void Update()
     {
         _timeCount += Time.deltaTime;
-        if (_timeCount >= _attackSpeed)
+        if (_timeCount >= _attackSpeed && State == CharacterState.Idle)
         {
             _timeCount = 0;
-            StartCoroutine(Attack());
-        }
-        if (_attackCount >= _data.SkillAttackCount)
-        {
-            _attackCount = 0;
-            Skill();
+            Attack();
         }
     }
-    protected virtual IEnumerator Attack()
-    {;
-        State = CharacterState.Attack;
+    protected virtual void Attack()
+    {
         _collider.gameObject.SetActive(true);
-        yield return new WaitForSeconds(AttackTime);
-        State = CharacterState.Idle;
-        _collider.gameObject.SetActive(false);
-
-        _attackCount++;
+        DOVirtual.DelayedCall(_attackTime, () => _collider.gameObject.SetActive(false));
     }
+
     public virtual void Damage(int damage)
     {
-        Hp -= damage;
-        _damageCount++;
-        if (Hp <= 0)
-        {
-            State = CharacterState.Dead;
-        }
-        if (_damageCount >= _data.SkillDamageCount)
-        {
-            _damageCount = 0;
-            Skill();
+        if (photonView.IsMine){
+            Hp -= damage;
+            if (Hp <= 0)
+            {
+                EndSkill();
+                State = CharacterState.Dead;
+            }
         }
     }
     protected virtual void Skill()
@@ -79,5 +67,21 @@ public abstract class Character : MonoBehaviour
     protected virtual void EndSkill()
     {
         
+    }
+
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            //データの送信
+            stream.SendNext(Hp);
+            stream.SendNext(State);
+        }
+        else
+        {
+            //データの受信
+            Hp = (int)stream.ReceiveNext();
+            State = (CharacterState)stream.ReceiveNext();
+        }
     }
 }

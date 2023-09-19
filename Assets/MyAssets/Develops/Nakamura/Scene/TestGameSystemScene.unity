@@ -223,6 +223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 48814284177956065, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 113379545087520764, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: sceneViewId
       value: 1
@@ -287,6 +291,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6109957380630112333, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580832626563949665, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -300,6 +312,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 48814284177956065, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 113379545087520764, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: sceneViewId
       value: 3
@@ -362,6 +378,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4762067744350625150, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109957380630112333, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580832626563949665, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -443,6 +467,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 48814284177956065, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 113379545087520764, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: sceneViewId
       value: 2
@@ -507,6 +535,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6109957380630112333, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580832626563949665, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -520,6 +556,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 48814284177956065, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 113379545087520764, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: sceneViewId
       value: 4
@@ -582,6 +622,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4762067744350625150, guid: 2682789436dff254d94ba01a041132ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109957380630112333, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580832626563949665, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

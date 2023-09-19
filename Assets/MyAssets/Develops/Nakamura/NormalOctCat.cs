@@ -5,26 +5,32 @@ using UnityEngine;
 public class NormalOctCat : Character
 {
     [SerializeField] private float _skillTime;
-    private float _skillTimeCount;
-    protected override void Update()
+    [SerializeField] private float _skillCount;
+    private float _count;
+
+    protected override void Start()
     {
-        _skillTimeCount += Time.deltaTime;
-        if (_skillTimeCount >= _skillTime)
+        base.Start();
+        _count = 0;
+    }
+    protected override void Attack(){
+        _count += 1;
+        if (_count >= _skillCount)
         {
-            _skillTimeCount = 0;
-            EndSkill();
+            _count = 0;
+            Skill();
         }
-        base.Update();
+        base.Attack();
     }
     protected override void Skill()
     {
         Debug.Log("NormalOctCat Skill");
-        _attack *= 2;
-        _skillTimeCount = 0;
+        AttackPower *= 2;
+        Invoke(nameof(EndSkill), _skillTime);
     }
     protected override void EndSkill()
     {
         Debug.Log("NormalOctCat EndSkill");
-        _attack = _data.Attack;
+        AttackPower = _data.Attack;
     }
 }

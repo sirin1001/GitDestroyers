@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+public class Attack : MonoBehaviourPunCallbacks
 {
     [SerializeField] private Character _character;
     private Character _target;
@@ -10,8 +11,7 @@ public class Attack : MonoBehaviour
         _target = other.gameObject.GetComponent<Character>();
         if (_target != null)
         {
-            Debug.Log("Hit");
-            _target.Damage(_character._attack);
+            _target.Damage(_character.AttackPower);
         }
     }
 }

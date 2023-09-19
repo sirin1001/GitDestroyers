@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TestSlider : MonoBehaviour
 {
     [SerializeField] private CharacterData _data;
-    [SerializeField] private GameObject _gameObject;
+    [SerializeField] private Character _character;
     private Slider _slider;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,6 @@ public class TestSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _slider.value = _gameObject.GetComponent<Character>().Hp;
+        _slider.value = _character.Hp;
     }
 }
