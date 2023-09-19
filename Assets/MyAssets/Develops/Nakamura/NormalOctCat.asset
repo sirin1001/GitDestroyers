@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082b996c13890f743a2600f104842fbb, type: 3}
+  m_Name: NormalOctCat
+  m_EditorClassIdentifier: 
+  CharacterID: 1
+  CharacterName: NormalOctCat
+  SkillName: "\u304B\u305F\u3084\u3076\u308A"
+  SkillDescription: 
+  SkillAttackCount: 10
+  SkillDamageCount: 1000000
+  MaxHp: 100
+  Attack: 2
+  AttackSpeed: 1.5
+  AttackRange: 000000
+  Prefab: {fileID: 1807144574412457547, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+  Icon: {fileID: 0}

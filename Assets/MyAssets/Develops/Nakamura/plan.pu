@@ -1,0 +1,84 @@
+@startuml Character
+package "CharacterPrefabs" as CharacterPrefabs {
+    Character --> CharacterState
+    Character <|-- _Character : 個別にスキルなどの実装
+    Character --> CharacterData
+}
+
+class CharacterData <<ScriptableObject>> {
+    +CharacterID : int
+    +CharacterName : string
+    +SkillName : string
+    +SkillDescription : string
+    +MaxHp : int
+    +Attack : int
+    +AttackSpeed : float
+    +AttackRange : bool[3]
+    +Prefab : GameObject
+    +Icon : Sprite
+
+    +GetCharacterData(id : int) : CharacterData
+}
+abstract class Character <<MonoBehaviour>>{
+    #_data : CharacterData
+    #_state : CharacterState = Idle
+    +IReadOnlyState : CharacterState
+    #_hp : int
+    #_attackCount : int
+    #_damageCount : int
+
+    #Start() : void
+    #Update() : void
+    #virtual Attack() : void
+    +virtual Damage(damage : int) : void
+    #virtual Skill() : void
+}
+enum CharacterState {
+    Idle
+    Attack
+    Dead
+}
+
+package Data{
+    Class PlayerData
+    Class EnemyData
+}
+
+PlayerData --> CharacterData
+PlayerData <-- GameManager
+GameManager --> Character
+GameManager --> EnemyData
+PlayerData <-- SwapCharacter
+
+class PlayerData<<ScriptableObject>>{
+    +HaveCharacters : List<CharacterData>
+    +OutDeckCharacters : List<CharacterData>
+    +DeckCharacters : Dictionary<int, CharacterData>
+    +?CurrentDeck : Dictionary<int, CharacterData>
+}
+class EnemyData<<ScriptableObject>>{
+    +DeckCharacters : Dictionary<int, CharacterData>
+    +?CurrentDeck : Dictionary<int, CharacterData>
+}
+
+package GameManager{
+    Class GameManager
+    Class CharacterPotision
+    Class SwapCharacter
+}
+class GameManager<<MonoBehaviour>>{
+    -Start() : void
+    -Update() : void
+    -OnGameOver() : void
+    -OnGameClear() : void
+}
+class CharacterPotision<<MonoBehaviour>>{
+    -isHost : bool
+
+    -Start() : void
+    -ChangePosition() : void
+}
+class SwapCharacter<<MonoBehaviour>>{
+    -SwapCharacter() : void
+}
+@enduml
