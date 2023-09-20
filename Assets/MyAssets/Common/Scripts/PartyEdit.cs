@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ScreanManager))]
 public class PartyEdit : MonoBehaviour
 {
     [SerializeField] private PlayerData _playerData;
@@ -43,6 +44,7 @@ public class PartyEdit : MonoBehaviour
         if (isPossible)
         {
             _playerData.PartyCharacters = TempPartyCharacters.Clone() as int[];
+            GetComponent<ScreanManager>().LoadScene(0);
         }
     }
 
