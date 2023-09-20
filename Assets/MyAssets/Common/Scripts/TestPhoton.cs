@@ -4,15 +4,20 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
+[RequireComponent(typeof(TestResult), typeof(SwapCharacter))]
 public class TestPhoton : MonoBehaviourPunCallbacks
 {
     [SerializeField] private PlayerData _playerData;
-    [SerializeField] private CharacterAdmin _characterAdmin;
-    [SerializeField] private SwapCharacter _swapCharacter;
+    private CharacterAdmin _characterAdmin;
+    private SwapCharacter _swapCharacter;
+    private TestResult _testResult;
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
+        _characterAdmin = FindObjectOfType<CharacterAdmin>();
+        _swapCharacter = GetComponent<SwapCharacter>();
+        _testResult = GetComponent<TestResult>();
     }
 
     public override void OnConnectedToMaster()
@@ -54,5 +59,6 @@ public class TestPhoton : MonoBehaviourPunCallbacks
                 _swapCharacter.AddCurrentCharacters(obj);
             }
         }
+        _testResult.GetCharacterState();
     }
 }

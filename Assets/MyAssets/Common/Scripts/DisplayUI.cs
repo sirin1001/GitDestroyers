@@ -11,12 +11,7 @@ public class DisplayUI : MonoBehaviour
     [SerializeField] private Button _swapButton;
     [SerializeField] private Image _characterImage;
     private Character _character;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -28,11 +23,13 @@ public class DisplayUI : MonoBehaviour
                 _hpSlider.maxValue = _character._data.MaxHp;
                 _hpSlider.value = _character.Hp;
                 _characterImage.sprite = _character._data.Icon;
+                _characterImage.color = Color.white;
                 _swapButton.interactable = true;
             }
         }
         else
         {
+            _characterImage.color = Color.clear;
             _hpSlider.value = 0;
             _swapButton.interactable = false;
         }

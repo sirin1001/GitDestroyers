@@ -2,43 +2,78 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using DG.Tweening;
 
 public class TestResult : MonoBehaviourPunCallbacks
 {
-    public Character[] _characters;
-    public List<Character> _playerCharacters;
-    public List<Character> _enemyCharacters;
-    public bool _isPlayerWin;
-    public bool _isEnemyWin;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Invoke("Test", 10f);
-    }
+    [SerializeField] JudgePannel _judgePannel;
+    private Character[] _characters;
+    private List<Character> _playerCharacters;
+    private List<Character> _enemyCharacters;
+    private const float _waitTime = 1.0f;
 
-    private void Test()
+    private void Start()
     {
-        _characters = FindObjectsOfType<Character>();
-        foreach (var character in _characters)
+        _judgePannel.gameObject.SetActive(false);
+    }
+    public void GetCharacterState()
+    {
+        DOVirtual.DelayedCall(_waitTime, () =>
         {
-            if (character.photonView.IsMine)
+            _characters = FindObjectsOfType<Character>();
+            _playerCharacters = new List<Character>();
+            _enemyCharacters = new List<Character>();
+            foreach (var character in _characters)
             {
-                _playerCharacters.Add(character);
+                if (character.photonView.IsMine)
+                {
+                    _playerCharacters.Add(character);
+                }
+                else
+                {
+                    _enemyCharacters.Add(character);
+                }
             }
-            else
-            {
-                _enemyCharacters.Add(character);
-            }
-        }
+        });
     }
     private void Update()
+    {
+        if (_playerCharacters == null || _enemyCharacters == null)
+        {
+            return;
+        }
+        if (IsPlayerWin())
+        {
+            _judgePannel.gameObject.SetActive(true);
+            _judgePannel.SetJudgeText("Win");
+        }
+        else if (IsEnemyWin())
+        {
+            _judgePannel.gameObject.SetActive(true);
+            _judgePannel.SetJudgeText("Lose");
+        }
+    }
+
+    private bool IsPlayerWin()
+    {
+        foreach (var character in _enemyCharacters)
+        {
+            if (character.State != Character.CharacterState.Dead)
+            {
+                return false;
+            }
+        }
+        return true;
+    } 
+    private bool IsEnemyWin()
     {
         foreach (var character in _playerCharacters)
         {
             if (character.State != Character.CharacterState.Dead)
             {
-                _isEnemyWin = false;
+                return false;
             }
         }
+        return true;
     }
 }
