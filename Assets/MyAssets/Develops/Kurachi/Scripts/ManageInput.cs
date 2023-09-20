@@ -12,7 +12,7 @@ public class ManageInput : MonoBehaviour
     private string _password;
     private FirebaseAuth _auth;
     ManageAuthLog _log;
-
+    
     public void getSubmit()
     {
         _auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
@@ -55,6 +55,7 @@ public class ManageInput : MonoBehaviour
             Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                 result.User.DisplayName, result.User.UserId);
         });
+        ChangeNextScene();
     }
     void AnonymouslyAuth()
     {
@@ -74,5 +75,10 @@ public class ManageInput : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 result.User.DisplayName, result.User.UserId);
         });
+        ChangeNextScene();
+    }
+    void ChangeNextScene()
+    {
+
     }
 }
