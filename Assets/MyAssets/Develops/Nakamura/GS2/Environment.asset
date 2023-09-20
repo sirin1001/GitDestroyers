@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 082b996c13890f743a2600f104842fbb, type: 3}
-  m_Name: TestChara
+  m_Script: {fileID: 11500000, guid: 19105343daad41a8b8370baabc6e10d4, type: 3}
+  m_Name: Environment
   m_EditorClassIdentifier: 
-  CharacterName: testchara
-  SkillName: "\u30B9\u30AD\u30EB"
-  SkillDescription: "\u4E8C\u56DE\u653B\u6483"
-  MaxHp: 100
-  Attack: 5
-  AttackSpeed: 1.5
-  AttackRange: 000100
+  name: dev
+  region: 0
+  clientId: GKIBpnDMu0eKHQkNRgrt9KvyMmG4TBEslp-6u9NhiLbpHDtp4b-o3KqxjHB6wHHkqII
+  clientSecret: STlSisPXsQEhbqjOCcFDwMKzJUXArTkP

@@ -7,6 +7,7 @@ using UnityEngine;
 public class TestPhoton : MonoBehaviourPunCallbacks
 {
     [SerializeField] private PlayerData _playerData;
+    [SerializeField] private CharacterAdmin _characterAdmin;
     [SerializeField] private SwapCharacter _swapCharacter;
     // Start is called before the first frame update
     void Start()
@@ -46,9 +47,10 @@ public class TestPhoton : MonoBehaviourPunCallbacks
     private void SpawnCharacter(){
         for (int i = 0; i < _playerData.PartyCharacters.Length; i++)
         {
-            if (_playerData.PartyCharacters[i] != null)
+            var _party = _characterAdmin.GetCharacterData(_playerData.PartyCharacters[i]);
+            if (_party != null)
             {
-                var obj = PhotonNetwork.Instantiate(_playerData.PartyCharacters[i].Prefab.name, _swapCharacter.SpawnPosition[i], Quaternion.identity);
+                var obj = PhotonNetwork.Instantiate(_party.Prefab.name, _swapCharacter.SpawnPosition[i], Quaternion.identity);
                 _swapCharacter.AddCurrentCharacters(obj);
             }
         }
