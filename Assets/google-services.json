@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "724506962377",
+    "project_id": "git-destroyers",
+    "storage_bucket": "git-destroyers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724506962377:android:3a09e684f909d71d582018",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.GitDestroyers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDMdWbwFb9kJhqGON1AUm2EJ55r85_eaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
