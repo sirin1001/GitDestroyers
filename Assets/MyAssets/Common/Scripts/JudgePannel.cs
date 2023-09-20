@@ -6,10 +6,19 @@ using UnityEngine.UI;
 
 public class JudgePannel : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _judgeText;
+    [SerializeField] private Image _judgeImage;
+    [SerializeField] private Sprite _winSprite;
+    [SerializeField] private Sprite _loseSprite;
     
-    public void SetJudgeText(string text)
+    public void SetJudgeSprite(bool isWin)
     {
-        _judgeText.text = text;
+        if (isWin)
+        {
+            _judgeImage.sprite = _winSprite;
+        }
+        else
+        {
+            _judgeImage.sprite = _loseSprite;
+        }
     }
 }
