@@ -45,12 +45,12 @@ public class TestResult : MonoBehaviourPunCallbacks
         if (IsPlayerWin())
         {
             _judgePannel.gameObject.SetActive(true);
-            _judgePannel.SetJudgeText("Win");
+            _judgePannel.SetJudgeSprite(true);
         }
         else if (IsEnemyWin())
         {
             _judgePannel.gameObject.SetActive(true);
-            _judgePannel.SetJudgeText("Lose");
+            _judgePannel.SetJudgeSprite(false);
         }
     }
 

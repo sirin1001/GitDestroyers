@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371ba642ae894ce488df4075a922fd0a, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  HaveCharacters: 01000000
+  HaveCharacters: 010000000200000003000000040000000500000006000000
   PartyCharacters: 01000000010000000100000001000000

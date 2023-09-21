@@ -344,7 +344,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1774378649045037093}
   m_HandleRect: {fileID: 3612203850888694347}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -424,7 +424,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00002087311}
-  m_SizeDelta: {x: 100, y: 0}
+  m_SizeDelta: {x: 1903, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5574318933074718430
 MonoBehaviour:
@@ -476,7 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3574b39c0bf9a54b86d1d1b11f51cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterAdmin: {fileID: 0}
   _playerData: {fileID: 11400000, guid: 9bada4f6dfab2f24dbc7e55666de24fb, type: 2}
   _characterIconPrefab: {fileID: 9096301910650270968, guid: b82c28ad2d4a0a544a71ee25070ae8ec, type: 3}
 --- !u!1 &5580324475843011533
