@@ -14,13 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterID: 1
   CharacterName: NormalOctCat
-  SkillName: "\u304B\u305F\u3084\u3076\u308A"
-  SkillDescription: 
-  SkillAttackCount: 10
-  SkillDamageCount: 1000000
+  SkillName: "\u30D8\u30A4\u30B9\u30C8"
+  SkillDescription: "10\u56DE\u653B\u6483\u3059\u308B\u3054\u3068\u306B5\u79D2\u9593\u653B\u6483\u529B\u304C2\u500D\u306B\u306A\u308B\u3002"
   MaxHp: 100
   Attack: 2
   AttackSpeed: 1.5
-  AttackRange: 000000
-  Prefab: {fileID: 374302191038789919, guid: 2682789436dff254d94ba01a041132ab, type: 3}
+  Prefab: {fileID: 3166815149506523223, guid: 2682789436dff254d94ba01a041132ab, type: 3}
   Icon: {fileID: 21300000, guid: 107eb8b163fba504eaa27727770f2c26, type: 3}

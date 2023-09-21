@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: BlueOctcat
   m_EditorClassIdentifier: 
   CharacterID: 2
-  CharacterName: 
+  CharacterName: BlueOctCat
   SkillName: 
   SkillDescription: 
-  SkillAttackCount: 0
-  SkillDamageCount: 0
-  MaxHp: 0
-  Attack: 0
-  AttackSpeed: 0
-  AttackRange: 000000
-  Prefab: {fileID: 0}
+  MaxHp: 60
+  Attack: 3
+  AttackSpeed: 0.7
+  Prefab: {fileID: 3409152786319452890, guid: 372e7851595606945a4f6adad8c273ed, type: 3}
   Icon: {fileID: 21300000, guid: dea1ce290aa57cd4ab761c29032ea99d, type: 3}

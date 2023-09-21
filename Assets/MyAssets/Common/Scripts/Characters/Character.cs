@@ -4,7 +4,6 @@ using Photon.Pun;
 using UnityEngine;
 using DG.Tweening;
 
-[RequireComponent(typeof(Character))]
 public abstract class Character : MonoBehaviourPunCallbacks, IPunObservable
 {
     public enum CharacterState

@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: MarineSuitOctCat
   m_EditorClassIdentifier: 
   CharacterID: 4
-  CharacterName: 
+  CharacterName: MarineSuitOctcat
   SkillName: 
   SkillDescription: 
-  SkillAttackCount: 0
-  SkillDamageCount: 0
-  MaxHp: 0
-  Attack: 0
-  AttackSpeed: 0
-  AttackRange: 000000
-  Prefab: {fileID: 0}
+  MaxHp: 90
+  Attack: 1
+  AttackSpeed: 1
+  Prefab: {fileID: 3409152786319452890, guid: 664dc36434af6464bb8599a37b6895ee, type: 3}
   Icon: {fileID: 21300000, guid: ac9ca13b21e34da4e9629a8b5e23402a, type: 3}
