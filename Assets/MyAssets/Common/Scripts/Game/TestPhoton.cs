@@ -9,6 +9,7 @@ public class TestPhoton : MonoBehaviourPunCallbacks
 {
     [SerializeField] private PlayerData _playerData;
     [SerializeField] private GameObject _background;
+    [SerializeField] private GameObject _roadingPannel;
     private CharacterAdmin _characterAdmin;
     private SwapCharacter _swapCharacter;
     private TestResult _testResult;
@@ -16,6 +17,7 @@ public class TestPhoton : MonoBehaviourPunCallbacks
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
+        _roadingPannel.SetActive(true);
         _characterAdmin = FindObjectOfType<CharacterAdmin>();
         _swapCharacter = GetComponent<SwapCharacter>();
         _testResult = GetComponent<TestResult>();
@@ -35,7 +37,7 @@ public class TestPhoton : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.InstantiateRoomObject(_background.name, new Vector3(0, 0, 10), Quaternion.identity);
+            PhotonNetwork.Instantiate(_background.name, new Vector3(0, 0, 10), Quaternion.identity);
         }
         if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
         {
@@ -43,6 +45,7 @@ public class TestPhoton : MonoBehaviourPunCallbacks
         }
         if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
         {
+            _roadingPannel.SetActive(false);
             SpawnCharacter();
         }
     }
@@ -51,6 +54,7 @@ public class TestPhoton : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
         {
+            _roadingPannel.SetActive(false);
             SpawnCharacter();
         }
     }

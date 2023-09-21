@@ -44,7 +44,7 @@ public class PartyEdit : MonoBehaviour
         if (isPossible)
         {
             _playerData.PartyCharacters = TempPartyCharacters.Clone() as int[];
-            GetComponent<ScreanManager>().LoadScene(0);
+            GetComponent<ScreanManager>().LoadScene(1);
         }
     }
 

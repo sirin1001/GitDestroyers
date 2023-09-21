@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MyAssets/Develops/Kurachi/Scenes/AuthScene.unity
+    guid: cdbfaff026bac2049887f24d31834aa5
+  - enabled: 1
     path: Assets/MyAssets/Scenes/HomeScene.unity
     guid: be60843557163ee408835de6cd8c6825
   - enabled: 1
