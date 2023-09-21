@@ -8,12 +8,9 @@ public class CharacterData : ScriptableObject {
     public string CharacterName;
     public string SkillName;
     public string SkillDescription;
-    public int SkillAttackCount;
-    public int SkillDamageCount;
     public int MaxHp;
     public int Attack;
     public float AttackSpeed;
-    public bool[] AttackRange = new bool[3];
     public GameObject Prefab;
     public Sprite Icon;
 }

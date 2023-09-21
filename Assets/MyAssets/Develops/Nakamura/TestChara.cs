@@ -13,10 +13,6 @@ public class TestChara : MonoBehaviour
         Debug.Log(status.SkillDescription);
         Debug.Log(status.MaxHp);
         Debug.Log(status.Attack);
-        Debug.Log(status.AttackSpeed);
-        Debug.Log(status.AttackRange[0]);
-        Debug.Log(status.AttackRange[1]);
-        Debug.Log(status.AttackRange[2]);
     }
 
     // Update is called once per frame
