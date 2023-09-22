@@ -5,8 +5,7 @@ using TMPro;
 using Firebase.Extensions;
 using Firebase.Auth;
 using Gs2.Gs2Identifier.Model;
-using UnityEditor.SceneManagement;
-using UnityEngine.SceneManagement;
+
 
 public class ManageInput : MonoBehaviour
 {
@@ -81,6 +80,6 @@ public class ManageInput : MonoBehaviour
     }
     void ChangeNextScene()
     {
-        SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }
